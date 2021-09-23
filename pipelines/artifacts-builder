@@ -1,0 +1,7 @@
+@Library('inveox-pipeline')_
+
+buildImage(
+  dockers: [
+    [fileName: 'Dockerfile', imageName: 'inveox.azurecr.io/azure_metrics_exporter'],
+  ]
+)

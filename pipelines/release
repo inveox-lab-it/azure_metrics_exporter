@@ -1,0 +1,14 @@
+@Library('inveox-pipeline')_
+
+node('master') {
+    stage('Setup env variables') {
+      env.XDG_CACHE_HOME='/tmp/.cache'
+    }
+}
+
+semanticReleasePipeline (
+  templateName: 'java-release',
+  docker: [
+    image: 'golang:1.16-buster',
+  ]
+)
